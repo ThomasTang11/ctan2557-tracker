@@ -1,5 +1,5 @@
-import cardioImage from './images/cardio.jpg';
-import weightsImage from './images/weights.jpg';
+const cardioImage = require('./images/cardio.jpg');
+const weightsImage = require('./images/weights.jpg');
 
 const form = document.getElementById("taskform");
 const tasklist = document.getElementById("tasklist");
