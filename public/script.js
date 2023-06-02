@@ -1,9 +1,8 @@
-import images from './images/thumbnails/*.gif';
-console.log(images)
+import cardioImage from './images/cardio.jpg';
+import weightsImage from './images/weights.jpg';
 
 const form = document.getElementById("taskform");
 const tasklist = document.getElementById("tasklist");
-
 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -13,73 +12,50 @@ form.addEventListener("submit", function (event) {
         form.elements.taskRate.value,
         form.elements.taskTime.value,
         form.elements.taskClient.value,
-    )
-})
-
+        form.elements.taskIntensity.value
+    );
+});
 
 function displayTasks() {
-
-    tasklist.innerHTML = ""
-    let localTasks = JSON.parse(localStorage.getItem('tasks'))
+    tasklist.innerHTML = "";
+    let localTasks = JSON.parse(localStorage.getItem('tasks'));
     if (localTasks !== null) {
         localTasks.forEach(function (task) {
-
-            let taskImage = null;
-            switch (task.type) {
-                case 'Concept Ideation':
-                    taskImage = images['ideate']
-                    break;
-                case 'Wireframing':
-                    taskImage = images['design']
-                    break;
-                case 'Application Coding':
-                    taskImage = images['code']
-                    break;
-                default:
-                    break;
-            }
-
             let item = document.createElement("li");
             item.setAttribute("data-id", task.id);
-            item.innerHTML = `<p><strong>${task.name}</strong><br>${task.type}</p><img src='${taskImage}' width='50'/>`;
+            item.innerHTML = `
+                <div class="task-item">
+                    <div class="task-image">
+                        <img src="${task.type === 'Cardio' ? cardioImage : weightsImage}" alt="${task.type}" />
+                    </div>
+                    <div class="task-details">
+                        <p><strong>${task.name}</strong></p>
+                        <p>Type: ${task.type}</p>
+                        <p>Date: ${task.date}</p>
+                        <p>Time: ${task.time}</p>
+                        <p>Client: ${task.client}</p>
+                        <p>Intensity: ${task.intensity}</p>
+                    </div>
+                </div>
+            `;
             tasklist.appendChild(item);
-
-
-            form.reset();
-
 
             let delButton = document.createElement("button");
             let delButtonText = document.createTextNode("Delete");
             delButton.appendChild(delButtonText);
-            item.appendChild(delButton); 
+            item.appendChild(delButton);
 
             delButton.addEventListener("click", function (event) {
-
-
-                localTasks.forEach(function (taskArrayElement, taskArrayIndex) {
-                    if (taskArrayElement.id == item.getAttribute('data-id')) {
-                        localTasks.splice(taskArrayIndex, 1)
-                    }
-                })
-
-
-                localStorage.setItem('tasks', JSON.stringify(localTasks))
-
-                item.remove(); 
-
-            })
-        })
-
+                let taskId = item.getAttribute('data-id');
+                let updatedTasks = localTasks.filter(task => task.id !== taskId);
+                localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+                item.remove();
+            });
+        });
     }
-
 }
 
-
-
-
-function addTask(name, type, rate, time, client) {
-
-
+function addTask(name, type, rate, time, client, intensity) {
     let task = {
         name,
         type,
@@ -87,31 +63,23 @@ function addTask(name, type, rate, time, client) {
         date: new Date().toISOString(),
         rate,
         time,
-        client
-    }
+        client,
+        intensity
+    };
 
-
-    let localTasks = JSON.parse(localStorage.getItem('tasks'))
-
-
+    let localTasks = JSON.parse(localStorage.getItem('tasks'));
     if (localTasks == null) {
-        localTasks = [task]
+        localTasks = [task];
     } else {
         if (localTasks.find(element => element.id === task.id)) {
-            console.log('Task ID already exists')
+            console.log('Task ID already exists');
         } else {
-
             localTasks.push(task);
         }
     }
 
-
-    localStorage.setItem('tasks', JSON.stringify(localTasks))
-
-
+    localStorage.setItem('tasks', JSON.stringify(localTasks));
     displayTasks();
-
 }
 
-
-addTask("Initial Sketches", "Concept Ideation", 50, 5, "Google");
+displayTasks();
