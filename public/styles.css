@@ -5,6 +5,12 @@ body {
     background-color: #f8f8f8;
 }
 
+.welcome-message {
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 10px;
+}
+
 .container {
     max-width: 600px;
     margin: 0 auto;
