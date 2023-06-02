@@ -2,7 +2,7 @@
   "name": "deco2017-task-tracker",
   "version": "1.0.0",
   "description": "Task tracking web application",
-  "main": "server.js",
+  "main": "server.html",
   "scripts": {
     "start": "node server.js",
     "prestart": "parcel build ./public/index.html",
