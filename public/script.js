@@ -1,5 +1,6 @@
 import cardioImage from './images/cardio.jpg';
 import weightsImage from './images/weights.jpg';
+import './style.css';
 
 const form = document.getElementById("taskform");
 const tasklist = document.getElementById("tasklist");

@@ -3,6 +3,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
+    background-image: url('./images/patten.jpg');
+    background-repeat: repeat;
+    background-size: cover;
 }
 
 .welcome-message {
