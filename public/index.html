@@ -10,11 +10,13 @@
 </head>
 
 <body>
+  <!-- Header Section -->
   <header>
     <h1>Fitness Task Tracker</h1>
     <p class="welcome-message">Welcome! Please start by entering the information for your exercise.</p>
     </header>
   </header>
+  <!-- Main Body Section -->
   <form id="taskform">
     <div class="form-row">
       <label for="taskName">Name</label>
@@ -41,6 +43,7 @@
         <option value="Low">Low</option>
       </select>
     </div>
+    <!-- User Feedback Section -->
     <div class="form-row">
       <label for="taskFeedback">User Feedback</label>
       <input type="text" name="taskFeedback" id="taskFeedback" required="true">
@@ -49,6 +52,7 @@
       <input type="submit">
     </div>
   </form>
+  <!-- Completed Section -->
   <h2>Completed Tasks</h2>
   <ul id="tasklist"></ul>
   <script src="script.js" type="module"></script>
