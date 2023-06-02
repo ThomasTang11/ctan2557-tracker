@@ -19,6 +19,7 @@ Iteration 2: Enhanced Functionality and Aesthetics
 Iteration 3: Refinements and Bug Fixes
 - Addressed user feedback and made necessary adjustments.
 - Fixed bugs and improved error handling.
+- Welcome message added. 
 - Optimised code for better performance and maintainability.
 - Conducted extensive testing across different browsers and devices.
 - Reviewed and finalised the application for deployment.
