@@ -60,7 +60,7 @@ Development Server
    - Enter the exercise duration in minutes.
    - Select the exercise intensity level (options: High, Medium, Low).
    - Provide user feedback in the input field.
-3. Click the "Add Exercise" button to record the exercise.
+3. Click the "Submit" button to record the exercise.
 4. The recorded exercise will appear in the list below with all the details.
 5. To delete an exercise, click the "Delete" button next to the exercise in the list.
 
