@@ -45,7 +45,7 @@ Installation
 Development Server
 1. Run the development server: `npm run dev`
 2. Access the application in a web browser
-3. In case of getting an error message, view this link to see what it should produce. 
+3. In case of getting an error message, view this link to see what it should produce: https://replit.com/@ChutianTang/Task-Tracker-Test#index.html 
 
 ## Future Development and Contributions
 - The Task Tracker application can be further enhanced with additional features like task filtering, sorting, and data visualisation.
