@@ -1,6 +1,3 @@
-import cardioImage from './images/cardio.jpg';
-import weightsImage from './images/weights.jpg';
-
 const form = document.getElementById("taskform");
 const tasklist = document.getElementById("tasklist");
 
@@ -25,9 +22,6 @@ function displayTasks() {
             item.setAttribute("data-id", task.id);
             item.innerHTML = `
                 <div class="task-item">
-                    <div class="task-image">
-                        <img src="${task.type === 'Cardio' ? cardioImage : weightsImage}" alt="${task.type}" />
-                    </div>
                     <div class="task-details">
                         <p><strong>${task.name}</strong></p>
                         <p>Type: ${task.type}</p>
