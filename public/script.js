@@ -88,7 +88,7 @@ function displayTasks() {
 
 // Create a function called 'addTask'
 // Give the function input parameters for: name, type, time, intensity, feedback
-// Paste your object definition from above in the function
+// Paste object definition from above in the function
 // Replace the property values with the input parameters
 // Add the object to the taskList array
 function addTask(name, type, time, intensity, feedback) {
